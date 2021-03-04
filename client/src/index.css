@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  border:5px solid var(--black);
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  min-width: 100vw;
+  background-image: url('./img/books-background.png');
+  background-repeat: repeat-y;
+  background-size: contain;
+  font-family: 'Lato', sans-serif;
+}
+
+:root {
+  --white: #f2f6e8;
+  --whiteOp: #f2f6e8ad;
+  --grey: #cbd3c8;
+  --sandDark: #d0b999;
+  --sand: #d8d1b5;
+  --pink: #c04a5a;
+  --pinkDark: #ac3b4a;
+  --mint: #739e82;
+  --black: #1d1d1b;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 12px 0;
+  color: var(--sandDark);
+  font-family: 'Lobster Two', cursive;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 10px 0;
+  color: var(--sandDark);
+  font-family: 'Lobster Two', cursive;
+}
+
+h6 {
+  margin: 6px 0;
+  font-family: 'Lato', sans-serif;
+  color: var(--black);
+}
+
+p, h5 {
+  margin: 12px 0;
+}
+
+button {
+  font-family: 'Lato', sans-serif;
+}
+
+button:focus {
+  outline: unset;
+}

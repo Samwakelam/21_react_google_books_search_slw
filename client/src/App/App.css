@@ -1,0 +1,47 @@
+main {
+  width: 60vw;
+  max-width: 1200px;
+  min-height: 600px;
+  margin: 5% auto 5% 5%;
+
+  background-color: var(--whiteOp);
+  padding: 12px;
+}
+
+header {
+  /* width: 100%; */
+  min-height: 20px;
+  margin: 12px;
+
+  background-color: var(--grey);
+}
+
+section {
+  min-height: 50px;
+  margin: 12px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--grey);
+  padding: 12px;
+}
+
+button.btn-icon {
+  background-color: unset;
+  border: unset;
+  outline: unset;
+  padding: 3px;
+}
+
+.icon {
+  height: 40px;
+  width: 40px;
+}
+
+.icon:hover {
+  transform: scale(1.05);
+}

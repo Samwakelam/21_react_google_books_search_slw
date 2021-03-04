@@ -1,0 +1,70 @@
+.book-container {
+  margin: 12px;
+  padding: 12px;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 110px auto;
+  grid-template-rows: auto;
+  row-gap: 12px;
+  column-gap: 12px;
+
+  border: 3px solid var(--mint);
+  border-radius: 3px;
+}
+
+.book-action {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.book-action > button {
+  width: 100px;
+  margin: 6px 0;
+
+  background-color: var(--pink);
+  border-color: var(--white);
+  border-radius: 3px;
+  color: var(--white);
+}
+
+.book-action > button:hover {
+  background-color: var(--pinkDark);
+  border-color: var(--sand);
+}
+
+.book-action > button > a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.book-cover {
+  /* height: 100px; */
+  width: 100px;
+}
+
+.book-title {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 1;
+}
+
+.book-details {
+  grid-column: 2 / span 1;
+  grid-row: 2/ span 1;
+}
+
+.book-details > h4:first-child {
+  margin-top: 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.author {
+  padding: 0 3px;
+}
+
+.details {
+  font-size: 10px;
+}

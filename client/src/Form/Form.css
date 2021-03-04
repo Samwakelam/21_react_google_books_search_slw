@@ -1,0 +1,33 @@
+form{
+  display: flex;
+  align-items: center;
+}
+
+#search-book {
+  padding: 12px;
+}
+
+#search-field {
+  height: 25px;
+  border-color: var(--pink);
+}
+
+#search-field:focus {
+  outline: unset;
+  box-shadow: 0 0 5px 0.5px var(--pink) inset;
+}
+
+#search-btn {
+  height: 25px;
+  margin: 6px ;
+
+  background-color: var(--pink);
+  border-color: var(--white);
+  border-radius: 3px;
+  color: var(--white);
+}
+
+#search-btn:hover {
+  background-color: var(--pinkDark);
+  border-color: var(--sand);
+}
