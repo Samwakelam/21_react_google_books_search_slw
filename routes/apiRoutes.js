@@ -32,11 +32,17 @@ router.post('/books', async function(req,res){
 
 });
 
-router.delete('/books/:id', async function(req,res){
-  console.log('req.body =', req.body);
+router.delete('/books/:id', async function(req, res){
   console.log('req.params =', req.params);
-  console.log('req.query =', req.query);
 
+  BookModel.deleteOne({ id: req.params.id })
+  .then(data => {
+    res.json(data);
+  })
+  .catch(err => {
+    console.log({err});
+    res.json(err);
+  });
 });
 
 

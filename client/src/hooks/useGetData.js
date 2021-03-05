@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-const useGetData = (onSetData) => {
-  // console.log('searchValue =', searchValue);
-  // console.log('onSetData =', onSetData);
+const useGetData = () => {
+
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
 
@@ -13,8 +13,8 @@ const useGetData = (onSetData) => {
       const response = await fetch(queryURL);
       if (response.ok) {
         const json = await response.json();
-        console.log('fetchData fetch, json.items=', json); 
-        onSetData(json);
+        console.log(' useGetData, response, json.items=', json); 
+        setItems(json);
       } else {
         console.log('fetch error', response.status);
       }
@@ -22,7 +22,13 @@ const useGetData = (onSetData) => {
     }
     fetchData();
 
+    return () => {
+      console.log('I did unmount');
+    }; 
+
   }, []);
+
+  return items;
 
 }
 

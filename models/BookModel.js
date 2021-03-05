@@ -7,7 +7,7 @@ const BookSchema = new Schema({
   averageRating: {type: Number},
   categories: [{type: String}],
   description: {type : String},
-  img: {type: String},
+  image: {type: String},
   infoLink: {type: String},
   pageCount: {type: Number},
   publishedDate: {type: String},
