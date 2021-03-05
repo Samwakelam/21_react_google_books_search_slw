@@ -2,15 +2,15 @@ import React from 'react';
 // styles
 import './Book.css';
 
-const Book = ({ bookData }) => {
+const SaveBook = ({ bookData }) => {
 
-  console.log('bookData =', bookData);
+  console.log('SaveBook, bookData =', bookData);
 
   return(
   
-    bookData.map((book) => (
+    bookData.map((book) => ( 
       
-        (book.imageLinks) && (
+        (book.img) && (
           <article key={book.id} id={book.id} className='book-container'>
             <div className='book-title'>
               <h2>{book.title}</h2>
@@ -23,7 +23,6 @@ const Book = ({ bookData }) => {
                 className='book-cover' 
                 src={book.img} 
                 alt='book cover'
-                
               />
              
               <button>
@@ -56,4 +55,4 @@ const Book = ({ bookData }) => {
   );
 }
 
-export default Book;
+export default SaveBook;

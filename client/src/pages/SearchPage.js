@@ -1,28 +1,40 @@
-import React, {useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 // styles
 import './SearchPage.css';
 // components
 import Form from '../Form/Form';
-import Book from '../Book/SearchBook';
+import Book from '../Book/Book';
 // hooks
 import useSearch from '../hooks/useSearch';
 
 const SearchPage = () => {
 
-  const [bookData , setBookData] = useState([]);
   const [searchValue , setSearchValue] = useState('');
 
-  const handleSearch = (value) => {
+  const handleSearch = useCallback((value) => {
     // console.log('search page, HandleSearch, value =', value);
     setSearchValue(value);
-  }
+  })
 
-  const onSetData = (data) => {
-    setBookData(data)
-  }
+  const handleSave = useCallback((bookData) => {
+    const url = '/api/books'
+    fetch( url, {
+      method: 'POST',
+      headers: { 'content-Type': 'application/json' },
+      body: JSON.stringify(bookData),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  });
 
-  useSearch(searchValue, onSetData)
+  const bookData = useSearch(searchValue);
+  console.log('bookData', bookData);
 
   return (
     <div id='search-page'>
@@ -33,7 +45,14 @@ const SearchPage = () => {
       </section>
 
       <section>
-        <Book bookData={bookData} />
+        {bookData.map((book) => (
+          <Book 
+            key={book.id} 
+            bookData={book} 
+            page={'search'} 
+            onSave={handleSave} 
+          />
+        ))}
       </section>
     </div>
   )

@@ -12,12 +12,12 @@ const Form = ({onSearch}) => {
     setSearchField(event.target.value)
   }
 
-  const onSearchButton = (event) => {
+  const onClickSearch = (event) => {
     event.preventDefault();
     event.stopPropagation();
 
     const value = document.getElementById('search-field').value;
-    console.log('value =', value);
+    // console.log('value =', value);
     onSearch(value);
   }
 
@@ -25,7 +25,7 @@ const Form = ({onSearch}) => {
     <form>
       <label id='search-book' htmlFor='search-field'> Search Book:</label>
       <input id='search-field' type='text' name='search-field' onChange={onChangeBookSearch} value={searchField}></input>
-      <button id='search-btn' onClick={onSearchButton}>Search</button>
+      <button id='search-btn' onClick={onClickSearch}>Search</button>
     </form>
   )
 }
