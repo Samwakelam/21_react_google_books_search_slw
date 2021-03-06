@@ -33,7 +33,7 @@ router.post('/books', async function(req,res){
 });
 
 router.delete('/books/:id', async function(req, res){
-  console.log('req.params =', req.params);
+  // console.log('req.params =', req.params);
 
   BookModel.deleteOne({ id: req.params.id })
   .then(data => {

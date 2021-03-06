@@ -11,7 +11,7 @@ const SavedPage = () => {
   // const [bookData, setBookData] = useState([])
 
   const handleDelete = useCallback((id) => {
-    console.log('delete function, id =', id);
+    // console.log('delete function, id =', id);
     const url = `/api/books/${id}`
     fetch( url, {
       method: 'DELETE',
@@ -27,7 +27,7 @@ const SavedPage = () => {
   });
 
   const [bookData , refreshBookData] = useGetData();
-  console.log('savedPage, bookData =', bookData);
+  // console.log('savedPage, bookData =', bookData);
 
   return (
     <div id='saved-page'>

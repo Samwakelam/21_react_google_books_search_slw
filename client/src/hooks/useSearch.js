@@ -5,8 +5,8 @@ const useSearch = (searchValue) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    console.log('useSearch is running')
-    console.log('searchValue =', searchValue);
+    // console.log('useSearch is running')
+    // console.log('searchValue =', searchValue);
 
     const fetchData = async () => {
       const search = searchValue;
