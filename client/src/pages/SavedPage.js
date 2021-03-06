@@ -19,13 +19,14 @@ const SavedPage = () => {
     .then(response => response.json())
     .then(data => {
       console.log('Success:', data);
+      refreshBookData();
     })
     .catch((error) => {
       console.error('Error:', error);
     });
   });
 
-  const bookData = useGetData();
+  const [bookData , refreshBookData] = useGetData();
   console.log('savedPage, bookData =', bookData);
 
   return (
