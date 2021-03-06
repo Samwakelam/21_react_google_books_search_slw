@@ -8,6 +8,8 @@ This assignment required me to create React components, work with helper/util fu
 
 I have had the oportunity to utilise block code in components for both Saved page and Search Page books, and utilise custom hooks to fetch and utilise data. This Project also demonstrates connecting the front client with a back end server. 
 
+Checkout the [Deployment](https://react-book-search-slw-21.herokuapp.com/#/)
+
 ## Contents: 
 
 1. [Screen Shots](#Screes-shots)
