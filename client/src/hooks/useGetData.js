@@ -9,7 +9,7 @@ const useGetData = () => {
     const response = await fetch(queryURL);
     if (response.ok) {
       const json = await response.json();
-      console.log(' useGetData, response, json.items=', json); 
+      // console.log(' useGetData, response, json.items=', json); 
       setItems(json);
     } else {
       console.log('fetch error', response.status);
