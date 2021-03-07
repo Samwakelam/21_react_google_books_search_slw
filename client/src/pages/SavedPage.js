@@ -8,11 +8,10 @@ import useGetData from '../hooks/useGetData';
 
 const SavedPage = () => {
 
-  // const [bookData, setBookData] = useState([])
-
   const handleDelete = useCallback((id) => {
     // console.log('delete function, id =', id);
     const url = `/api/books/${id}`
+
     fetch( url, {
       method: 'DELETE',
     })
@@ -24,15 +23,17 @@ const SavedPage = () => {
     .catch((error) => {
       console.error('Error:', error);
     });
+
   });
 
-  const [bookData , refreshBookData] = useGetData();
+  const [bookData , refreshBookData, fetchStatus] = useGetData();
   // console.log('savedPage, bookData =', bookData);
 
   return (
     <div id='saved-page'>
       <section>
         <h2>Your Saved Collection</h2>
+        <p id='status'>{fetchStatus}</p>
       </section>
 
       <section>

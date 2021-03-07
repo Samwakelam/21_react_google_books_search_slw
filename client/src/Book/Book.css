@@ -68,3 +68,10 @@
 .details {
   font-size: 10px;
 }
+
+.book-save {
+  text-align: center;
+  color: var(--mint);
+  width: 100px;
+  font-size: 14px;
+}

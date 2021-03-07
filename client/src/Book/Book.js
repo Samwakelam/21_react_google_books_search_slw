@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 // styles
 import './Book.css';
 
 const Book = ({ bookData, page, onSave, onDelete }) => {
 
   const { id, title, authors, categories, image, infoLink, description, pageCount, averageRating, publisher, publishedDate } = bookData
+
+  const [saved, setSaved] = useState(false);
+
+  const setSave = () => {
+    setSaved(true);
+  }
 
   return (
     <article id={id} className='book-container'>
@@ -31,8 +37,9 @@ const Book = ({ bookData, page, onSave, onDelete }) => {
           </a>
         </button>
 
-        {page === 'search' && <button onClick={() => onSave(bookData)} >Save</button>}
+        {(page === 'search' && saved === false) && <button onClick={() => {onSave(bookData); setSave();}} >Save</button>}
         {page === 'saved' && <button onClick={() => onDelete(id)} >Delete</button>}
+        {saved === true && <p className='book-save'>You have saved this book</p>}
       </div>
 
       <div className='book-details'>
